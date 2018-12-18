@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Webpage for GroupGenerator.js</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+  <section class="container py-5">
+      <h1>Group 'Em <small class="text-muted">(Period 1)</small></h1>
+      <div class="row mt-4">
+        <div class="col-4">
+          <h5>Teachers</h5>
+          <ul class="period-1-list"></ul>
+        </div>
+        <div class="col-8">
+          <label for="per_group">Max Per Group</label>
+          <input type="number" id="per_group" class="form-control d-inline-block mr-4" value="5" style="max-width: 60px;">
+          <button class="btn btn-secondary group-by-order">Group By Order</button>
+          <button class="btn btn-secondary group-by-random">Randomly Group</button>
+          <button class="btn btn-secondary group-by-level">Group By Level</button>
+          <hr>
+          <div class="row grouped-teachers">
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Prefer JS at the bottom of the <body>, to prevent DOM blocking -->
+  <script src="group-generator.js"></script>
+  <script src="group-dom-manipulation.js"></script>
+</body>
+</html>
