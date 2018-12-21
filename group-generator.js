@@ -58,8 +58,6 @@ function arrayOfNames(array) {
   return nameArray;
 };
 
-
-
 function group(array, size) {
   let newArray = [];
   let actual
@@ -90,25 +88,19 @@ function orderedGroups(array, size) {
   addOrderedSortNumber(array);
   sort(array);
   let nameArray = arrayOfNames(array);
-  console.log(group(nameArray, size));
+  return group(nameArray, size);
 }
 
 function randomGroups(array, size) {
   addRandomSortNumber(array);
   sort(array);
   let nameArray = arrayOfNames(array);
-  console.log(group(nameArray, size));
+  return group(nameArray, size);
 }
 
 function leveledGroups(array, size) {
   addLeveledSortNumber(array);
   sort(array);
   let nameArray = arrayOfNames(array);
-  console.log(group(nameArray, size));
+  return group(nameArray, size);
 }
-
-orderedGroups(period1, 5);
-console.log('------------');
-randomGroups(period1, 5);
-console.log('------------');
-leveledGroups(period1, 5);
