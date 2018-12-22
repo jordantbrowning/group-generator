@@ -18,51 +18,49 @@ let period1 = [
   {name: 'Gollum', level: 2}
 ];
 
-
 function addRandomSortNumber(array) {
-  array.map(function(student){
-  student.sortNumber = Math.random();
-
+  array.map(function (student) {
+    student.sortNumber = Math.random();
   });
   return array;
 };
 
 function addLeveledSortNumber(array) {
-  array.map(function(student) {
+  array.map(function (student) {
     student.sortNumber = student.level + Math.random();
-  })
+  });
   return array;
 }
 
 function addOrderedSortNumber(array) {
   let i = 0;
-  array.map(function(student) {
+  array.map(function (student) {
     student.sortNumber = i;
-    i ++;
-  })
+    i++;
+  });
   return array;
 }
 
-function sort(array){
-  array.sort(function(a, b) {
-  return a.sortNumber - b.sortNumber;
-});
+function sort(array) {
+  array.sort(function (a, b) {
+    return a.sortNumber - b.sortNumber;
+  });
+
   return array;
 };
 
 function arrayOfNames(array) {
-  let nameArray =[]
-  array.forEach(function(student) {
+  let nameArray = [];
+  array.forEach(function (student) {
     nameArray.push(student.name);
-  })
+  });
   return nameArray;
 };
 
 function group(array, size) {
   let newArray = [];
-  let actual
   newArray.push(array.slice(0, size));
-  for(i = size; i < array.length; i = i + size) {
+  for (let i = size, len = array.length; i < len; i = i + size) {
     newArray.push(array.slice(i, i + size));
   }
   if (array.length % size === 0) {
@@ -74,10 +72,10 @@ function group(array, size) {
       do {
         newArray[i].unshift(newArray[j][h]);
         newArray[j].pop();
-        i --;
-        j --;
+        i--;
+        j--;
       } while (j >= t);
-        t ++;
+        t++;
     } while (newArray[newArray.length - 1].length < size - 1);
     return newArray;
   }
